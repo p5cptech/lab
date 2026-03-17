@@ -1,0 +1,133 @@
+   /* Reset & Variabel */
+   :root {
+       --primary-color: #285A48;
+       --primary-hover: #1e4436;
+       --danger: #dc3545;
+       --success: #28a745;
+       --bg-gradient: linear-gradient(135deg, #285A48 0%, #3D7A6B 50%, #4A9A85 100%);
+   }
+
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       /* Firefox Linux terkadang butuh font-smoothing tambahan */
+       -moz-osx-font-smoothing: grayscale;
+       -webkit-font-smoothing: antialiased;
+       font-family: 'Segoe UI', Ubuntu, Cantarell, 'Open Sans', sans-serif;
+   }
+
+   body {
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background: var(--bg-gradient);
+       /* Mencegah scroll bar liar di Linux */
+       overflow-x: hidden;
+       padding: 20px;
+   }
+
+   .auth-container {
+       width: 100%;
+       max-width: 450px;
+       display: flex;
+       justify-content: center;
+   }
+
+   .auth-card {
+       background: rgba(255, 255, 255, 0.95);
+       /* Firefox Support untuk Backdrop Filter */
+       backdrop-filter: blur(12px);
+       -webkit-backdrop-filter: blur(12px);
+
+       border: 1px solid rgba(255, 255, 255, 0.3);
+       border-radius: 20px;
+       padding: 40px;
+       width: 100%;
+       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+       /* Penting untuk Firefox: Pastikan flex direction ke bawah */
+       display: flex;
+       flex-direction: column;
+   }
+
+   /* Styling Header */
+   .auth-header {
+       text-align: center;
+       margin-bottom: 30px;
+   }
+
+   .auth-header h1 {
+       color: var(--primary-color);
+       font-size: 28px;
+       font-weight: 700;
+   }
+
+   /* Form & Input Optimization */
+   .form-group {
+       margin-bottom: 20px;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+   }
+
+   .form-group label {
+       margin-bottom: 8px;
+       font-weight: 600;
+       color: #333;
+       font-size: 14px;
+       display: flex;
+       align-items: center;
+       gap: 8px;
+   }
+
+   .form-group input,
+   .form-group textarea {
+       width: 100%;
+       padding: 12px 16px;
+       border: 2px solid #e1e5e9;
+       border-radius: 12px;
+       font-size: 15px;
+       background: #ffffff;
+       /* Menghilangkan ring biru default Firefox */
+       outline: none;
+       transition: all 0.2s ease-in-out;
+   }
+
+   /* State Focus khusus Firefox */
+   .form-group input:focus,
+   .form-group textarea:focus {
+       border-color: var(--primary-color);
+       box-shadow: 0 0 0 3px rgba(40, 90, 72, 0.15);
+   }
+
+   /* Tombol */
+   .btn-full {
+       width: 100%;
+       padding: 15px;
+       background: var(--primary-color);
+       color: white;
+       border: none;
+       border-radius: 12px;
+       font-size: 16px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: transform 0.2s, background 0.2s;
+       margin-top: 10px;
+   }
+
+   .btn-full:hover {
+       background: var(--primary-hover);
+       transform: translateY(-2px);
+   }
+
+   .btn-full:active {
+       transform: translateY(0);
+   }
+
+   /* Custom Scrollbar untuk Firefox Linux */
+   * {
+       scrollbar-width: thin;
+       scrollbar-color: var(--primary-color) #f1f1f1;
+   }

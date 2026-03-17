@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #285A48;
+    --primary-dark: #1b3d31;
+    --secondary-color: #f59e0b;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+    --text-dark: #333;
+    --shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+}
+
+body { 
+    background-color: var(--bg-body); 
+    padding: 40px 20px; 
+    color: var(--text-dark);
+}
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+/* Header & Navigation */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 30px; 
+}
+
+.header h2 { 
+    color: var(--primary-color); 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.btn-back { 
+    text-decoration: none; 
+    color: #666; 
+    font-weight: 600; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    background: white; 
+    transition: 0.3s ease; 
+}
+
+.btn-back:hover { 
+    background: var(--primary-color); 
+    color: white; 
+    border-color: var(--primary-color);
+}
+
+/* Main Card */
+.card { 
+    background: var(--white); 
+    padding: 35px; 
+    border-radius: 16px; 
+    box-shadow: var(--shadow); 
+    border-top: 5px solid var(--primary-color);
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Profile Section for CSRF */
+.profile-section {
+    background: #f9fbf9;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eef2ee;
+    margin-bottom: 25px;
+}
+
+.profile-info {
+    font-size: 1.1rem;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccd9cc;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.profile-info i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+/* Form Styles */
+.update-form input[type="email"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.update-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+    background: white;
+}
+
+.update-form button {
+    transition: all 0.3s ease;
+}
+
+.update-form button:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 90, 72, 0.2);
+}
+
+/* Feedback Messages */
+.success-msg {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Payload & Hint Box */
+.payload-hint { 
+    margin-top: 35px; 
+    background: #fffbeb; 
+    border-left: 4px solid var(--secondary-color); 
+    padding: 20px; 
+    border-radius: 0 10px 10px 0; 
+}
+
+.payload-hint strong { 
+    color: #92400e; 
+    display: block; 
+    margin-bottom: 12px; 
+}
+
+.payload-hint pre { 
+    background: #1e1e1e; 
+    color: #d4d4d4; 
+    padding: 15px; 
+    border-radius: 8px; 
+    font-family: 'Fira Code', 'Courier New', monospace;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+/* Code styling */
+code {
+    background: #fce7f3;
+    color: #d63384;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+}

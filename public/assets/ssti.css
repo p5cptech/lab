@@ -1,0 +1,162 @@
+:root {
+    --primary-color: #285A48;
+    --primary-light: #3a7d65;
+    --primary-dark: #1b3d31;
+    --accent-color: #FFD700;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.05);
+    --indigo-soft: #eef2ff;
+    --indigo-bold: #6366f1;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: #333;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Card Utama */
+.card { 
+    background: var(--white); 
+    padding: 35px; 
+    border-radius: 16px; 
+    box-shadow: var(--shadow); 
+    border-top: 5px solid var(--primary-color);
+    position: relative;
+}
+
+/* Input & Form */
+.search-box { 
+    display: flex; 
+    gap: 12px; 
+    margin: 20px 0; 
+}
+
+input[type="text"] { 
+    flex: 1; 
+    padding: 12px 18px; 
+    border: 2px solid #eee; 
+    border-radius: 10px; 
+    font-size: 0.95rem; 
+    outline: none; 
+    transition: 0.3s;
+}
+
+input[type="text"]:focus { 
+    border-color: var(--primary-color); 
+    background: #f9fbf9; 
+}
+
+button { 
+    background: var(--primary-color); 
+    color: white; 
+    border: none; 
+    padding: 0 25px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.3s; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+}
+
+button:hover { 
+    background: var(--primary-dark); 
+    transform: translateY(-2px); 
+}
+
+/* Render Output Box */
+.render-box { 
+    background: #fafafa; 
+    border: 2px dashed #ddd; 
+    padding: 40px; 
+    border-radius: 12px; 
+    margin-top: 20px; 
+    text-align: center;
+    transition: 0.3s;
+}
+
+.render-box:hover {
+    border-color: var(--primary-color);
+    background: #f0f7f4;
+}
+
+.render-output { 
+    font-size: 1.3rem; 
+    color: #444;
+    font-weight: 500;
+}
+
+/* Payload Hint */
+.payload-hint { 
+    margin-top: 40px; 
+    background: var(--indigo-soft); 
+    border-left: 4px solid var(--indigo-bold); 
+    padding: 20px; 
+    border-radius: 0 10px 10px 0; 
+    font-size: 0.9rem;
+}
+
+.payload-hint strong { 
+    color: var(--indigo-bold); 
+    display: block; 
+    margin-bottom: 8px; 
+}
+
+code { 
+    background: rgba(99, 102, 241, 0.1); 
+    padding: 2px 5px; 
+    border-radius: 4px; 
+    color: var(--indigo-bold); 
+    font-weight: bold; 
+    font-family: 'Courier New', monospace;
+}
+
+/* Tombol Kembali */
+.btn-back { 
+    text-decoration: none; 
+    color: #666; 
+    font-weight: 600; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    background: white; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}

@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #285A48;
+    --primary-light: #3a7d65;
+    --primary-dark: #1b3d31;
+    --accent-color: #FFD700; /* Gold accent untuk elemen penting */
+    --bg-body: #f0f4f2;
+    --white: #ffffff;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+/* --- NAVBAR CUSTOM STYLES --- */
+.navbar {
+    background: var(--primary-dark);
+    padding: 0.8rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 1px;
+}
+
+.nav-logo i {
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Efek Hover Link Biasa */
+.nav-links li a:hover:not(.btn-siem) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Link Aktif */
+.nav-links li a.active {
+    color: var(--accent-color);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Tombol Khusus SIEM Console (Wazuh Style) */
+.btn-siem {
+    background: #00a9e0 !important; /* Warna khas Wazuh */
+    color: white !important;
+    border: 1px solid #008fbc;
+    box-shadow: 0 4px 10px rgba(0, 169, 224, 0.3);
+}
+
+.btn-siem:hover {
+    background: #008fbc !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 169, 224, 0.4);
+}
+
+/* Dropdown/Profile Style */
+.nav-links li a i {
+    font-size: 1.1rem;
+}
+
+/* Penyesuaian Header agar tidak tertutup Navbar */
+header {
+    margin-top: 0; /* Pastikan tidak ada celah */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-links li a {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+body {
+    background-color: var(--bg-body);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(40, 90, 72, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(40, 90, 72, 0.05) 0px, transparent 50%);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+header h1 i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+header p {
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: -30px auto 60px;
+    padding: 0 25px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Grid Layout */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Card Style */
+.category-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(40, 90, 72, 0.1);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(40, 90, 72, 0.15);
+    border-color: var(--primary-color);
+}
+
+.category-header {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-bottom: 1px solid #edf2f0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.category-header i {
+    background: rgba(40, 90, 72, 0.1);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-header i {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.category-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.module-list {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.module-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px solid #f8faf9;
+    transition: var(--transition);
+}
+
+.module-list li a:hover {
+    background: #f0f7f4;
+    padding-left: 35px;
+    color: var(--primary-color);
+}
+
+.module-list li a i {
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition);
+}
+
+.module-list li a:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Badge Status */
+.badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.badge.wazuh {
+    background: #00a9e0; /* Wazuh Blue */
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+}

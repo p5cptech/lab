@@ -1,0 +1,108 @@
+/* public/assets/css/auth.css */
+
+/* Center container secara vertikal dan horizontal */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+}
+
+.login-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid var(--primary-color); /* Menggunakan variabel main.css */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: var(--primary-color);
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.header p {
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(40, 90, 72, 0.15);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 13px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+.error-msg {
+    background-color: #fce4e4;
+    color: #cc0000;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #cc0000;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-dark);
+    opacity: 0.5;
+}

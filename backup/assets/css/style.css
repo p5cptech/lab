@@ -1,0 +1,78 @@
+/* VINTAGE TERMINAL THEME - ULTRA LIGHTWEIGHT */
+:root {
+    --bg-color: #121212;
+    --amber: #ffb000;
+    --amber-dim: #946b00;
+    --border-color: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--amber);
+    line-height: 1.5;
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+}
+
+/* Navbar */
+.navbar {
+    background: #000; border-bottom: 1px solid var(--amber);
+    padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 100;
+}
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 20px; }
+.logo { font-weight: bold; font-size: 1.2rem; }
+.logo span { color: #fff; }
+.nav-menu { list-style: none; display: flex; gap: 20px; }
+.nav-menu a { color: var(--amber-dim); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
+.nav-menu a:hover { color: var(--amber); }
+
+/* Layout */
+.container { max-width: 1100px; margin: 100px auto 0; padding: 20px; }
+.hero { text-align: center; border: 1px solid var(--amber); padding: 30px; margin-bottom: 40px; }
+.highlight { color: #fff; text-decoration: underline; }
+.status-pill { font-weight: bold; color: #00ff00; margin-bottom: 10px; }
+
+/* Grid Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.card { border: 1px solid var(--border-color); background: #1a1a1a; padding: 0; }
+.card-header { background: #333; color: #fff; padding: 5px 15px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+.card-body { padding: 20px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #fff; }
+.card p { font-size: 0.85rem; margin-bottom: 20px; color: var(--amber-dim); height: 60px; overflow: hidden; }
+
+/* Buttons */
+.btn { 
+    display: inline-block; padding: 8px 15px; border: 1px solid var(--amber); 
+    color: var(--amber); text-decoration: none; font-size: 0.8rem; font-weight: bold; 
+}
+.btn:hover { background: var(--amber); color: #000; }
+
+/* Special SIEM Card */
+.special { border: 1px solid var(--amber); }
+.btn-special { 
+    display: block; width: 100%; text-align: center; padding: 10px; 
+    background: var(--amber); color: #000; text-decoration: none; font-weight: bold; 
+}
+
+/* Form Retro */
+.form-container { margin-top: 60px; border: 1px solid var(--amber); padding: 30px; background: #000; }
+.form-header { font-size: 1.5rem; margin-bottom: 20px; font-weight: bold; border-bottom: 1px solid var(--amber); }
+.field { margin-bottom: 15px; }
+label { display: block; font-size: 0.7rem; margin-bottom: 5px; color: #fff; }
+input, textarea { 
+    width: 100%; background: #222; border: 1px solid var(--border-color); 
+    padding: 10px; color: var(--amber); font-family: monospace; 
+}
+input:focus { border-color: var(--amber); outline: none; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.btn-submit { 
+    width: 100%; padding: 15px; background: #000; color: var(--amber); 
+    border: 1px solid var(--amber); cursor: pointer; font-weight: bold; font-size: 1rem; 
+}
+.btn-submit:hover { background: var(--amber); color: #000; }
+
+footer { text-align: center; padding: 40px 0; font-size: 0.7rem; color: var(--amber-dim); }
+
+@media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }

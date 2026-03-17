@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #285A48;
+    --primary-dark: #1b3d31;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--bg-body); padding: 40px 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.header h2 { color: var(--primary-color); display: flex; align-items: center; gap: 12px; }
+
+.card { 
+    background: var(--white); padding: 35px; border-radius: 16px; 
+    box-shadow: var(--shadow); border-top: 5px solid var(--primary-color);
+}
+
+/* File Selection */
+.file-browser {
+    display: flex; gap: 15px; margin: 20px 0;
+}
+
+.file-item {
+    text-decoration: none; color: var(--primary-color);
+    padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px;
+    background: #f9fbf9; font-weight: 600; font-size: 0.9rem;
+    transition: 0.3s; display: flex; align-items: center; gap: 8px;
+}
+
+.file-item:hover {
+    background: var(--primary-color); color: white; border-color: var(--primary-color);
+}
+
+/* Viewer Section */
+.viewer-container {
+    margin-top: 25px; border-radius: 10px; border: 1px solid #eee; overflow: hidden;
+}
+
+.viewer-header {
+    background: #f1f1f1; padding: 12px 20px; font-weight: 700;
+    color: #555; font-size: 0.85rem; border-bottom: 1px solid #ddd;
+}
+
+.viewer-content {
+    background: #fff; padding: 25px; min-height: 200px; line-height: 1.6;
+}
+
+.viewer-content pre {
+    background: #f8f8f8; padding: 15px; border-radius: 6px;
+    white-space: pre-wrap; word-wrap: break-word; font-family: 'Fira Code', monospace;
+}
+
+/* Error & Hints */
+.error-msg {
+    background: #fff5f5; color: #c53030; padding: 15px;
+    border-radius: 8px; margin: 15px 0; border: 1px solid #feb2b2; font-size: 0.9rem;
+}
+
+.payload-hint {
+    margin-top: 40px; background: #f0f7f4; border-left: 4px solid var(--primary-color);
+    padding: 20px; border-radius: 0 10px 10px 0; font-size: 0.85rem;
+}
+
+.payload-hint strong { color: var(--primary-dark); display: block; margin-bottom: 10px; }
+
+code { background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px; font-weight: bold; }
+
+.btn-back {
+    text-decoration: none; color: #666; font-weight: 600; padding: 8px 16px;
+    border-radius: 8px; border: 1px solid #ddd; background: white; transition: 0.3s;
+}
+
+.btn-back:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); }

@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #285A48;
+    --primary-dark: #1b3d31;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--bg-body); padding: 40px 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.header h2 { color: var(--primary-color); display: flex; align-items: center; gap: 12px; }
+
+.card { 
+    background: var(--white); padding: 35px; border-radius: 16px; 
+    box-shadow: var(--shadow); border-top: 5px solid var(--primary-color);
+}
+
+.api-box { margin-top: 25px; border-radius: 12px; border: 1px solid #eee; overflow: hidden; }
+.api-header { 
+    background: #f8f9fa; padding: 12px 20px; font-weight: 700; color: #555; 
+    border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;
+}
+.api-header code { color: #d63384; background: #fce7f3; padding: 2px 8px; border-radius: 4px; }
+
+.api-content { background: #fff; padding: 25px; }
+.api-content pre { 
+    background: #f1f1f1; padding: 15px; border-radius: 8px; 
+    font-family: 'Fira Code', monospace; color: #333; font-size: 0.9rem;
+}
+
+.payload-hint { 
+    margin-top: 35px; background: #fffbeb; border-left: 4px solid #f59e0b; 
+    padding: 20px; border-radius: 0 10px 10px 0; font-size: 0.9rem; 
+}
+.payload-hint strong { color: #92400e; display: block; margin-bottom: 10px; }
+
+.btn-back { 
+    text-decoration: none; color: #666; font-weight: 600; padding: 8px 16px; 
+    border-radius: 8px; border: 1px solid #ddd; background: white; transition: 0.3s; 
+}
+.btn-back:hover { background: var(--primary-color); color: white; }

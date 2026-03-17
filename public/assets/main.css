@@ -1,0 +1,45 @@
+/* public/assets/css/main.css */
+:root {
+    --primary-color: #285A48;
+    --primary-hover: #1e4436;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+    --text-dark: #333;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+}
+
+.header-bar {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
