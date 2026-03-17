@@ -1,23 +1,42 @@
 <?php
+session_start();
 include 'config/db.php';
 include 'core/logger.php';
 
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    // LOGGING UNTUK WAZUH: Mencatat percobaan login
+    // LOGGING UNTUK WAZUH
     log_activity("Percobaan login: Username $username", "INFO");
 
-    // VULNERABLE QUERY: Sengaja tidak menggunakan Prepared Statements
+    // VULNERABLE QUERY (Tanpa Prepared Statement untuk keperluan Lab SQLi)
     $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
-        log_activity("Login Berhasil: " . $user['username'], "SUCCESS");
+
+        // --- PENENTUAN STATUS ADMIN ---
+        // admin = true jika role di DB adalah 'admin'
+        $isAdmin = (strtolower($user['role']) === 'admin') ? true : false;
+
+        // --- PEMBUATAN SESSION JSON ---
+        $session_array = [
+            "user" => $user['username'],
+            "email" => $user['email'],
+            "admin" => $isAdmin, // Boolean flag
+            "iat" => time()      // Issued At (Waktu login)
+        ];
+        
+        $encoded_session = base64_encode(json_encode($session_array));
+
+        // Simpan ke cookie 'user_auth'
+        setcookie('user_auth', $encoded_session, time() + 3600, "/", "", false, false);
+
+        log_activity("Login Berhasil: " . $user['username'] . " (Admin: " . ($isAdmin ? 'Yes' : 'No') . ")", "SUCCESS");
         header("Location: index.php");
         exit();
     } else {
@@ -25,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Username atau password salah!";
     }
 }
-?>
+?>     
 
 <!DOCTYPE html>
 <html lang="id">
