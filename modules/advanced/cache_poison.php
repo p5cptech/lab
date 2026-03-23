@@ -28,7 +28,7 @@ if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_time))
         <i class="fas fa-server"></i> Halaman ini baru saja di-generate dari server origin.
     </div>
     <p>Gunakan script ini untuk integrasi tracking:</p>
-    <script src="http://<?php echo htmlspecialchars($host); ?>/tracking.js"></script>
+    <script src="http://<?php echo htmlspecialchars($host); ?>/tracking22.js"></script>
     <div class="debug-box">
         Source URL: http://<?php echo htmlspecialchars($host); ?>/modules/advanced/cache_poison.php
     </div>
